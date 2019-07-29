@@ -1,0 +1,28 @@
+Monitor the time used of pc to have the estimate of coins without counting
+
+flow
+1. pc opens sends a message to server springboot
+2. server reads message and starts a thread per computer
+3. thread monitors pc and send status to web app via ping request
+4. when, pc sends winoff script shutdown 
+	* log to database -4 minute
+5. then when, pc dont send winoff script but got unreachable 
+	* log to database -1 minute
+
+
+threads
+1. pc message with ip address and indicator to on or off
+2. save application scope pc map to each object
+3. prepare 7 threads but down run it yet
+4. if on, start thread to log
+	a. first log if active after 5 mins
+		if active, continue with the loop
+		if inactive, cancel the log
+	b. 2nd log, if continued log every after 1 min to monitor
+	c. if unreachable, stop thread
+	* log to database -1 min
+5. if off, interupt the thread base on pcname
+	a. stop the thread with pcname
+	* log to database -4 mins
+6. if shutdown with no win off message
+	a. 4.c should catch
