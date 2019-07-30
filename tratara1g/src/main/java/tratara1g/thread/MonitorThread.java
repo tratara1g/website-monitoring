@@ -52,7 +52,7 @@ public class MonitorThread extends Thread {
 				String recievedMsg = br.readLine();
 
 				System.out.println("MonitorThread~ Message Received: " + recievedMsg);
-				if(!recievedMsg.isEmpty()) {
+				if(recievedMsg != null && !recievedMsg.isEmpty()) {
 					String[] msgPart = recievedMsg.split("~");
 					String pcn = "PC" + (msgPart[1].split("\\."))[3].substring(1);
 					

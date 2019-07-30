@@ -19,7 +19,7 @@ public class ThreadStatus {
 	@Autowired
 	private HashMap<String, PCStatusThread> monitorThreadMap;
 
-	@GetMapping("/pcstatus")
+	@GetMapping("/admin/pcstatus")
 	public JSONArray checkPCStatus() {
 		JSONArray response = new JSONArray();
 		System.out.println(monitorThreadMap.size());
