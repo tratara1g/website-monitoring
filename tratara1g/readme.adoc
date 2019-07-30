@@ -26,3 +26,5 @@ threads
 	* log to database -4 mins
 6. if shutdown with no win off message
 	a. 4.c should catch
+	
+added in che.openshift
