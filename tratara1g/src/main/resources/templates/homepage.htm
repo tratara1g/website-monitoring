@@ -1,14 +1,8 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
->
-<head>
-    <title>Spring Security Example </title>
-    <div th:replace="fragments/header :: header-css"/>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: header"/>
 </head>
 <body>
-
-<div th:replace="fragments/header :: header"/>
-
 <div class="container">
 
     <div class="row" style="margin-top:20px">
@@ -50,8 +44,7 @@
     </div>
 
 </div>
-
-<div th:replace="fragments/footer :: footer"/>
-
 </body>
+<footer th:replace="fragments/footer :: footer"/>
+</footer>
 </html>

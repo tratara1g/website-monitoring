@@ -25,15 +25,13 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 	
 	private RedirectStrategy redirectStrategy = new DefaultRedirectStrategy();
 
-	// roles admin allow to access /admin/**
-	// roles user allow to access /user/**
-	// custom 403 access denied handler
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 
 		http.csrf().disable()
 		.authorizeRequests()
-			//.antMatchers("/admin/**").hasAnyRole("ADMIN")
+		    .antMatchers("/webjars/**", "/css/**", "/js/**", "/images/**").permitAll()
+			.antMatchers("/admin/**").hasAnyRole("ADMIN")
 			.anyRequest().authenticated()
 		.and()
 		.formLogin()
@@ -58,8 +56,6 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 	public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
 
 		auth.inMemoryAuthentication()
-		//.withUser("guest").password("password").roles("GUEST")
-		//.and()
 		.withUser("admin").password("{noop}password").roles("ADMIN");
 	}
 }

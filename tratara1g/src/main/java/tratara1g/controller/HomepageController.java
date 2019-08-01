@@ -18,9 +18,9 @@ public class HomepageController {
 		return "admin"; //view
 	}
 	
-	@PostMapping({"/403", "/error"})
-	public String error403() {
+	@PostMapping("/error")
+	public String error() {
 
-		return "403Page"; //view
+		return "errorpage"; //view
 	}
 }

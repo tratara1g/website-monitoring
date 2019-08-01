@@ -34,7 +34,7 @@ public class ErrorHandler implements AccessDeniedHandler {
 			+ httpServletRequest.getRequestURI());
 		}
 
-		httpServletResponse.sendRedirect(httpServletRequest.getContextPath() + "/403Page");
+		httpServletResponse.sendRedirect(httpServletRequest.getContextPath() + "/error");
 
 	}
 }
