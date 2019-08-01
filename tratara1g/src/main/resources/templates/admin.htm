@@ -5,7 +5,7 @@
 <body>
 <div class="container">
 
-    <div class="starter-template">
+    <div class="row">
         <h1>Admin page (Spring Security protected)</h1>
 
         <h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
@@ -14,11 +14,47 @@
         </form>
 
     </div>
+    
+    <!-- SEARCH BAR -->
+<div class="row">
+ <!-- SEARCH Function -->
+</div>
+
+    <!-- Button Refresh -->
+    <!-- https://codepen.io/teamturret/pen/KwyVQx -->
+    <div class="row">
+    	<div class="progress-btn" data-progress-style="fill-back">
+    	  <div class="btn">Refresh</div>
+    	  <div class="progress"></div>
+    	</div>
+    </div>
+
+     <!-- DATATABLE BAR -->
+    <div class="row">
+        <div class="col-sm-12">
+            <table id="PCStatusTable" width="100%">
+            <tr>
+                <th>PC Name</th>
+                <th>Status</th>
+                <th>IP Address</th>
+                <th>MAC Address</th>
+                <th>Elapse Time</th>
+                <th>Cost</th>
+            </tr>
+            </table>
+        </div>
+    </div>
 
 </div>
 <!-- /.container -->
 
 </body>
 <footer th:replace="fragments/footer :: footer"/>
+<footer>
+     <script src="js/datatable.js"></script>
+     <script src="js/modernizer.js"></script>
+     <script src="js/classie.js"></script>
+     <script src="js/progressButton.js"></script>
+</footer>
 </footer>
 </html>
