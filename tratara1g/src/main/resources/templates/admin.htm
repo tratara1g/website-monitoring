@@ -6,8 +6,6 @@
 <div class="container">
 
     <div class="row">
-        <h1>Admin page (Spring Security protected)</h1>
-
         <h1 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h1>
         <form th:action="@{/logout}" method="post">
             <input type="submit" value="Sign Out"/>
@@ -18,29 +16,39 @@
     <!-- SEARCH BAR -->
 <div class="row">
  <!-- SEARCH Function -->
+<form>
+<input type="text">
+<input type="text">
+<input type="submit">
+</form>
 </div>
 
     <!-- Button Refresh -->
     <!-- https://codepen.io/teamturret/pen/KwyVQx -->
     <div class="row">
-    	<div class="progress-btn" data-progress-style="fill-back">
-    	  <div class="btn">Refresh</div>
-    	  <div class="progress"></div>
-    	</div>
+    <div id="progress-bar">
+        <button id="progress-btn">
+            <span id="progress-text">REFRESH</span>
+        </button>
+        <div id="progress-box">
+        </div>
+    </div>
     </div>
 
      <!-- DATATABLE BAR -->
     <div class="row">
         <div class="col-sm-12">
             <table id="PCStatusTable" width="100%">
+            <thead>
             <tr>
                 <th>PC Name</th>
                 <th>Status</th>
                 <th>IP Address</th>
-                <th>MAC Address</th>
+                <th>Start Time</th>
                 <th>Elapse Time</th>
                 <th>Cost</th>
             </tr>
+            </thead>
             </table>
         </div>
     </div>
@@ -51,10 +59,17 @@
 </body>
 <footer th:replace="fragments/footer :: footer"/>
 <footer>
-     <script src="js/datatable.js"></script>
-     <script src="js/modernizer.js"></script>
-     <script src="js/classie.js"></script>
-     <script src="js/progressButton.js"></script>
+    <script type="text/javascript" 
+        src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
+            
+    <script type="text/javascript" 
+        src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap4.min.js"></script>
+        
+    <link rel="stylesheet" type="text/css"
+        href="https://cdn.datatables.net/1.10.18/css/dataTables.bootstrap4.min.css" />   
+
+    <script type="text/javascript" 
+        src="js/admin.js"></script>
 </footer>
 </footer>
 </html>

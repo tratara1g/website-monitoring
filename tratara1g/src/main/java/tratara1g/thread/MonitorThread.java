@@ -33,14 +33,14 @@ public class MonitorThread extends Thread {
 		try {
 			ServerSocket serverSocket = new ServerSocket(port);
 			System.out.println("MonitorThread~ Server Started and listening to the port 25000");
-			monitorThreadMap.put("PC1", new PCStatusThread());
-			monitorThreadMap.put("PC2", new PCStatusThread());
-			monitorThreadMap.put("PC3", new PCStatusThread());
-			monitorThreadMap.put("PC4", new PCStatusThread());
-			monitorThreadMap.put("PC5", new PCStatusThread());
-			monitorThreadMap.put("PC6", new PCStatusThread());
-			monitorThreadMap.put("PC7", new PCStatusThread());
-			monitorThreadMap.put("PC45", new PCStatusThread());
+			monitorThreadMap.put("PC1", new PCStatusThread("PC1"));
+			monitorThreadMap.put("PC2", new PCStatusThread("PC2"));
+			monitorThreadMap.put("PC3", new PCStatusThread("PC3"));
+			monitorThreadMap.put("PC4", new PCStatusThread("PC4"));
+			monitorThreadMap.put("PC5", new PCStatusThread("PC5"));
+			monitorThreadMap.put("PC6", new PCStatusThread("PC6"));
+			monitorThreadMap.put("PC7", new PCStatusThread("PC7"));
+			monitorThreadMap.put("PC45", new PCStatusThread("PC45"));
 
 			//Server is running always. This is done using this while(true) loop
 			while(true) {
@@ -57,7 +57,6 @@ public class MonitorThread extends Thread {
 					String pcn = "PC" + (msgPart[1].split("\\."))[3].substring(1);
 					
 					PCStatusThread pcThread = monitorThreadMap.get(pcn);
-					pcThread.pc.setPcName(pcn);
 					pcThread.pc.setIpAddress(recievedMsg);
 					
 					SimpleDateFormat sdf = new SimpleDateFormat(); // fomat of date

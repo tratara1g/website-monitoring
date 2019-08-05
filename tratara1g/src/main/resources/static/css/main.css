@@ -4,3 +4,42 @@
     width: 1300px;
     max-width: 1300px;
 }
+
+/** REFRESH BTN **/
+#progress-btn {
+  color:white;
+  border:1px solid gray;
+  border-radius:5px;
+  background:green;
+  cursor:pointer;
+  width:200px;
+  height:70px;
+  padding:0;
+  position:relative;
+   outline:none;
+}
+
+#progress-box {
+ width:0px;
+ height:70px;
+ background-color:darkgreen; /*set desired color*/
+ position:relative;
+ margin-top: -70px;
+ z-index:2;
+ border-radius:5px;
+}
+
+#progress-box.anima {
+  width:200px;
+  transition: width 2s ease; 
+}
+
+#progress-bar {
+  position:relative;
+}
+
+#progress-text {
+  z-index:9;
+  position:relative;
+  text-transform:uppercase;
+}

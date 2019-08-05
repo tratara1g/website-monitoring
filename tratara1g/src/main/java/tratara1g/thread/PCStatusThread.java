@@ -13,6 +13,10 @@ public class PCStatusThread implements Runnable {
 
 	public PC pc = new PC();
 	public boolean continueThread = true;
+	
+	public PCStatusThread(String pcName) {
+		pc.setPcName(pcName);
+	}
 
 	@Override
 	public void run() {
