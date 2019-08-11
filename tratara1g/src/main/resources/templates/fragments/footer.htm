@@ -2,13 +2,21 @@
 	  xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
 <footer th:fragment="footer">
-
         <script type="text/javascript" 
             th:src="@{webjars/jquery/2.1.1/jquery.min.js}"></script>
+            
         <script type="text/javascript" 
             th:src="@{webjars/bootstrap/4.2.1/js/bootstrap.min.js}"></script>
-                        
             
+        <script type="text/javascript" 
+            src="https://cdn.datatables.net/1.10.18/js/jquery.dataTables.min.js"></script>
+            
+        <script type="text/javascript" 
+            src="https://cdn.datatables.net/1.10.18/js/dataTables.bootstrap4.min.js"></script>
+            
+        <link rel="stylesheet" type="text/css"
+            href="https://cdn.datatables.net/1.10.18/css/dataTables.bootstrap4.min.css" />
+                        
         <link rel="stylesheet" type="text/css"
               href="webjars/bootstrap/4.2.1/css/bootstrap.min.css" />
 
@@ -16,7 +24,6 @@
             href="css/main.css"/>
             
         <script type="text/javascript" 
-            src="js/main.js"></script>
-            
+            src="js/home.js"></script>
 </footer>
 </html>
