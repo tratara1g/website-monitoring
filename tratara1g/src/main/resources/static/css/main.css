@@ -1,8 +1,41 @@
 @CHARSET "UTF-8";
 
-.container {
+body {
+    background-color: #404040;
+}
+
+#baseBorder {
     width: 1300px;
     max-width: 1300px;
+    background-color: #333333;
+}
+
+#baseBanner {
+    background-image: url("paper.gif");
+    background-color: #112211;
+    width: 1300px;
+    height: 300px;
+}
+
+#baseGames {
+    /*background-image: url("paper.gif");*/
+    background-color: #ffffff;
+    width: 1300px;
+    height: 600px;
+}
+
+#baseStatus {
+    /*background-image: url("paper.gif");*/
+    background-color: #112211;
+    width: 1300px;
+    height: 400px;
+}
+
+#baseSocialLinks {
+    /*background-image: url("paper.gif");*/
+    background-color: #ffffff;
+    width: 1300px;
+    height: 50px;
 }
 
 /** REFRESH BTN **/
